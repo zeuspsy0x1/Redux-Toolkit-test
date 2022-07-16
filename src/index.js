@@ -4,8 +4,7 @@ import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { Provider } from 'react-redux'
-import generateStore from './redux/store'
-const store = generateStore()
+import store from './redux/store' //YA NO SE EJECUTA AQUI, SOLO SE LE PASA LA FUNCION AL PROVIDER
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

@@ -3,8 +3,8 @@ import logo from './logo.svg'
 import { useSelector, useDispatch } from 'react-redux'
 import './App.css'
 
-import { increment } from './redux/actions'
-import { decrement } from './redux/actions'
+import { SumOne } from './redux/toSum.slice'
+import { SubtractOne } from './redux/toSum.slice'
 
 function App() {
 	const dispatch = useDispatch()
@@ -12,12 +12,12 @@ function App() {
 	const handleClick = (e, effect) => {
 		e.preventDefault()
 
-		if (effect === 1) return dispatch(increment())
+		if (effect === 1) return dispatch(SumOne())
 
-		if (effect === 2) return dispatch(decrement())
+		if (effect === 2) return dispatch(SubtractOne())
 	}
 
-	const number = useSelector((state) => state.number)
+	const number = (state) => state.number.value // El useSelector se puede reemplazar ahora por esta forma de acceder al valor del estado de redux
 
 	return (
 		<>

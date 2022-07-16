@@ -1,4 +1,4 @@
-import { applyMiddleware, createStore } from 'redux'
+/* import { applyMiddleware, createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import reducer from './reducer'
 import thunk from 'redux-thunk'
@@ -10,3 +10,15 @@ const generateStore = () => {
 }
 
 export default generateStore
+ */
+
+import { configureStore } from '@reduxjs/toolkit'
+import toSumSlice from './toSum.slice.js'
+
+const store = configureStore({
+	reducer: {
+		toSums: toSumSlice,
+	},
+})
+
+export default store
